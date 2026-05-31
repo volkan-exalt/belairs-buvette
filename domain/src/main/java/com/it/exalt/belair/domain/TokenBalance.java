@@ -3,6 +3,7 @@ package com.it.exalt.belair.domain;
 import java.util.Objects;
 
 public final class TokenBalance {
+
     private final int drinkTokens;
     private final int foodTokens;
 
@@ -44,8 +45,12 @@ public final class TokenBalance {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TokenBalance)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TokenBalance)) {
+            return false;
+        }
         TokenBalance that = (TokenBalance) o;
         return drinkTokens == that.drinkTokens && foodTokens == that.foodTokens;
     }
@@ -57,9 +62,9 @@ public final class TokenBalance {
 
     @Override
     public String toString() {
-        return "TokenBalance{" +
-                "drinkTokens=" + drinkTokens +
-                ", foodTokens=" + foodTokens +
-                '}';
+        return "TokenBalance{"
+                + "drinkTokens=" + drinkTokens
+                + ", foodTokens=" + foodTokens
+                + '}';
     }
 }

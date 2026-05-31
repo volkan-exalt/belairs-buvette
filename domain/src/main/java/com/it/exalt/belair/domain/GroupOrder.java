@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class GroupOrder extends Order {
+
     private final Map<FestivalGoer, TokenBalance> contributions;
 
     public GroupOrder(FestivalGoer representative, List<OrderLine> lines, Map<FestivalGoer, TokenBalance> contributions) {

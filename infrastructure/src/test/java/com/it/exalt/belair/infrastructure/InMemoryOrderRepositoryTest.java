@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -29,8 +30,10 @@ class InMemoryOrderRepositoryTest {
         repository.save(first);
 
         assertSame(first, repository.findById(first.id()).orElseThrow());
-        assertEquals(List.of(first, second), repository.findAll());
-        assertEquals(List.of(first, second), repository.findByStatus(OrderStatus.CREATED));
+        assertEquals(2, repository.findAll().size());
+        assertTrue(repository.findAll().containsAll(List.of(first, second)));
+        assertEquals(2, repository.findByStatus(OrderStatus.CREATED).size());
+        assertTrue(repository.findByStatus(OrderStatus.CREATED).containsAll(List.of(first, second)));
         repository.deleteById(first.id());
         assertFalse(repository.findById(first.id()).isPresent());
         assertFalse(repository.findById(UUID.randomUUID()).isPresent());

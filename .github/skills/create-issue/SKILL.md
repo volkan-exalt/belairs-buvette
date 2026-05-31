@@ -13,8 +13,9 @@ Use this skill to generate development issues from `FEATURES.md`.
 2. Identify impacted layers for each feature: `domain`, `application`, `infrastructure`.
 3. Generate one issue per impacted layer when a feature spans multiple layers.
 4. Group closely related features only when the group remains clear and testable.
-5. Save issues under `docs/features/<feature-slug>/<issue-slug>.md`.
-6. Validate each issue with `scripts/validate_issue_format.py <path>`.
+5. Use `templates/issue-template.md` as the output structure.
+6. Save issues under `docs/features/<feature-slug>/<issue-slug>.md`.
+7. Validate each issue with `scripts/validate_issue_format.py <path>` from the repository root, or with `.github/skills/create-issue/scripts/validate_issue_format.py <path>` from the skill.
 
 ## Required Issue Format
 
@@ -39,3 +40,9 @@ Validation must include a Gradle command or explicit documentation-only validati
 - Infrastructure issues must cover adapters, persistence, clocks, or notifications.
 - Keep titles concise and explicit.
 - Use project modules exactly as named: `domain`, `application`, `infrastructure`.
+
+## Extra Resources
+
+- Read `reference.md` when a feature spans several modules or when deciding whether to split issues.
+- Read `examples.md` when the expected Markdown or Gherkin style is unclear.
+- Use `templates/issue-template.md` for every generated issue.

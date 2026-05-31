@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 public final class OrderPreparationEstimator {
+
     private OrderPreparationEstimator() {
         // utility class
     }

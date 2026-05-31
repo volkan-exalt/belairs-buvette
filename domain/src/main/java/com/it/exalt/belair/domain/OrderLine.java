@@ -3,6 +3,7 @@ package com.it.exalt.belair.domain;
 import java.util.Objects;
 
 public abstract class OrderLine {
+
     private final String name;
     private final int quantity;
 
@@ -33,8 +34,12 @@ public abstract class OrderLine {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof OrderLine)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OrderLine)) {
+            return false;
+        }
         OrderLine orderLine = (OrderLine) o;
         return name.equals(orderLine.name) && getClass().equals(orderLine.getClass()) && isSameType(orderLine);
     }

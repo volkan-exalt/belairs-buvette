@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 public final class HydrationReminderPolicy {
+
     private static final LocalTime START = LocalTime.of(11, 0);
     private static final LocalTime END = LocalTime.of(19, 0);
 

@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Order {
+
     private final UUID id;
     private final FestivalGoer owner;
     private List<OrderLine> lines;

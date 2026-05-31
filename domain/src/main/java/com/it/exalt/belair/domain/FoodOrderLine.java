@@ -3,6 +3,7 @@ package com.it.exalt.belair.domain;
 import java.util.Objects;
 
 public final class FoodOrderLine extends OrderLine {
+
     private final FoodType foodType;
 
     public FoodOrderLine(String name, FoodType foodType, int quantity) {
